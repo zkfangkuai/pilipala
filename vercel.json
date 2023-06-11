@@ -1,5 +1,0 @@
-{
-  "redirects": [
-    { "source": "/gallery/", "destination": "/gallery", "statusCode": 301 }
-  ]
-}
