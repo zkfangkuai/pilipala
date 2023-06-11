@@ -1,5 +1,5 @@
 {
-  "rewrites": [
-    { "source": "/gallery", "destination": "/gallery.html" }
+  "routes": [
+    { "src": "/gallery", "dest": "/index.html" }
   ]
 }
