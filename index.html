@@ -25,7 +25,7 @@
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
       
-      (window.location) 
+      })(window.location)
     </script>
 
     <title>Pilipala Typing</title>
@@ -59,179 +59,13 @@
     </script>
     <script type="module" crossorigin src="./assets/index-d47b0f3e.js"></script>
     <link rel="stylesheet" href="./assets/index-f2aa23ae.css">
-
-    <!-- 添加验证层的样式 -->
-    <style>
-      #verify-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-      }
-      
-      .dark #verify-overlay {
-        background: rgba(0, 0, 0, 0.95);
-      }
-
-      .verify-container {
-        background: white;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        width: 90%;
-        max-width: 400px;
-      }
-
-      .dark .verify-container {
-        background: #1f2937;
-        color: white;
-      }
-
-      .verify-form input {
-        width: 100%;
-        padding: 8px;
-        margin: 8px 0;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        background: white;
-      }
-
-      .dark .verify-form input {
-        background: #374151;
-        border-color: #4b5563;
-        color: white;
-      }
-
-      .verify-btn {
-        width: 100%;
-        padding: 10px;
-        background-color: #818CF8;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-top: 1rem;
-      }
-
-      .verify-btn:hover {
-        background-color: #6366f1;
-      }
-
-      #verify-result {
-        margin-top: 1rem;
-        padding: 10px;
-        border-radius: 4px;
-        display: none;
-      }
-
-      .success { background: #f0fdf4; color: #166534; }
-      .error { background: #fef2f2; color: #991b1b; }
-      
-      .dark .success { background: #052e16; color: #86efac; }
-      .dark .error { background: #450a0a; color: #fca5a5; }
-    </style>
   </head>
   <body>
     <noscript>
       <div>You need to enable JavaScript to run Pilipala Typing.</div>
       <div>你需要启用 JavaScript 来运行 Pilipala Typing。</div>
     </noscript>
-    
-    <!-- 添加验证层 -->
-    <div id="verify-overlay">
-      <div class="verify-container">
-        <h2 style="text-align: center; margin-bottom: 20px;">验证访问</h2>
-        <div class="verify-form">
-          <input type="text" id="kami" placeholder="请输入卡密">
-          <button onclick="verifyCard()" class="verify-btn">验证</button>
-        </div>
-        <div id="verify-result"></div>
-      </div>
-    </div>
-
     <div id="root"></div>
-
-    <!-- 修改验证脚本部分 -->
-    <script>
-      function verifyCard() {
-        const kami = document.getElementById('kami').value;
-        const resultDiv = document.getElementById('verify-result');
-
-        if (!kami) {
-          showVerifyResult('请输入卡密', false);
-          return;
-        }
-
-        const xhr = new XMLHttpRequest();
-        const baseUrl = 'https://vip.fago.top/api.php';
-        const appId = '10000';
-        const url = `${baseUrl}?api=kmlogon&app=${appId}&kami=${kami}&t=${Math.floor(Date.now() / 1000)}`;
-
-        xhr.open('GET', url, true);
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState === 4) {
-            try {
-              if (xhr.status === 200) {
-                const response = xhr.responseText;
-                
-                // 提取最后一行（实际的响应数据）
-                const lines = response.split('\n');
-                const lastLine = lines[lines.length - 1].trim();
-                
-                // 检查是否是有效的响应
-                if (lastLine.length > 32) { // 通常卡密验证的响应都很长
-                  showVerifyResult('验证成功！正在进入...', true);
-                  localStorage.setItem('verified', 'true');
-                  setTimeout(() => {
-                    document.getElementById('verify-overlay').style.display = 'none';
-                  }, 1500);
-                } else {
-                  showVerifyResult('验证失败：卡密无效', false);
-                }
-              } else {
-                showVerifyResult('请求失败：服务器错误', false);
-              }
-            } catch (error) {
-              showVerifyResult('请求处理失败：' + error.message, false);
-            }
-          }
-        };
-
-        xhr.onerror = function() {
-          showVerifyResult('网络请求失败，请检查网络连接', false);
-        };
-
-        try {
-          xhr.send();
-        } catch (error) {
-          showVerifyResult('发送请求失败：' + error.message, false);
-        }
-      }
-
-      function showVerifyResult(message, isSuccess) {
-        const resultDiv = document.getElementById('verify-result');
-        resultDiv.style.display = 'block';
-        resultDiv.className = isSuccess ? 'success' : 'error';
-        resultDiv.textContent = message;
-      }
-
-      // 检查是否已验证
-      if (localStorage.getItem('verified') === 'true') {
-        document.getElementById('verify-overlay').style.display = 'none';
-      }
-
-      // 添加回车键支持
-      document.getElementById('kami').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-          verifyCard();
-        }
-      });
-    </script>
+    
   </body>
-</html>
+</html>    
