@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="./logo.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pili Pala</title>
+    <script>
+      +(function () {
+        function rem() {
+          let html = document.documentElement;
+          let max = parseInt('2048rem');
+          let min = parseInt('2048rem');
+          let width;
+          if (window.innerWidth < min) {
+            width = min;
+          } else {
+            width = window.innerWidth;
+          }
+          // console.log('width', width)
+          html.style.fontSize = width / max + 'px';
+        }
+
+        rem();
+        window.addEventListener('resize', rem);
+      })();
+    </script>
+    <script>
+
+    </script>
+    <script>
+      if (!location.href.includes('localhost')
+        && !location.href.includes('192.168')
+        && !location.href.includes('172.16')
+        && !location.href.includes('10.0')
+      ) {
+        var _hmt = _hmt || [];
+        (function () {
+          var hm = document.createElement("script");
+          if (location.href.includes('netlify.app')) {
+            hm.src = "https://hm.baidu.com/hm.js?d77525f1ad23698a2f34f54ff69c7750";
+          } else if (location.href.includes('github.io')) {
+            hm.src = "https://hm.baidu.com/hm.js?d77525f1ad23698a2f34f54ff69c7750";
+          } else {
+            hm.src = "https://hm.baidu.com/hm.js?c558fd8cc39d4cc233a9db44ff5b6e3f";
+          }
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+      }
+    </script>
+  <script type="module" crossorigin src="./assets/index-b1d2a09b.js"></script>
+  <link rel="stylesheet" href="./assets/index-78f195a5.css">
+</head>
+<style>
+  .act-user-modal[data-v-627ce64e] {
+      width: 900px;
+      height: 570px;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      z-index: 9000;
+      background: url(./assets/2-036d7619.png)
+          no-repeat 50%;
+      margin: -285px 0 0 -450px;
+  }
+
+  .act-user-modal .close[data-v-627ce64e] {
+      position: absolute;
+      top: -24px;
+      right: 12px;
+      width: 24px;
+      height: 24px;
+      text-align: center;
+      line-height: 24px;
+      font-size: 18px;
+      border-radius: 50%;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+
+  .act-user-modal h3[data-v-627ce64e] {
+      padding: 21px 0 0 92px;
+      margin: auto;
+      text-align: left;
+  }
+
+  .act-user-modal h3 img[data-v-627ce64e] {
+      margin: 0;
+      height: 50px;
+  }
+
+  .act-user-modal img[data-v-627ce64e] {
+      display: block;
+      margin: 0 auto;
+  }
+
+  .act-user-modal .center[data-v-627ce64e] {
+      height: 240px;
+  }
+
+  .act-user-modal .center h1[data-v-627ce64e] {
+      text-align: center;
+      font-size: 34px;
+      color: #333;
+      margin: 0 auto;
+      width: 700px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+
+  .act-user-modal .center .desc[data-v-627ce64e] {
+      text-align: center;
+      font-size: 20px;
+      padding: 10px 0 10px;
+  }
+
+  dl,
+  dt,
+  li,
+  ol,
+  p,
+  ul {
+      margin: 0;
+      padding: 0;
+      font-style: normal;
+      list-style: none;
+  }
+
+  .act-user-modal .center .nr[data-v-627ce64e] {
+      width: 580px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 26px;
+      color: #777;
+      margin: auto;
+  }
+
+  .act-user-modal ul[data-v-627ce64e] {
+      display: flex;
+      width: 640px;
+      margin: auto;
+      justify-content: space-around;
+  }
+
+  .act-user-modal ul li[data-v-627ce64e] {
+      width: 130px;
+      color: #fff;
+      text-align: center;
+  }
+
+  .act-user-modal ul li img[data-v-627ce64e] {
+      margin-bottom: 10px;
+      height: 72px;
+  }
+
+  .act-user-modal ul li .name[data-v-627ce64e] {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+  }
+
+  .act-user-modal .btn[data-v-627ce64e] {
+      width: 180px;
+      height: 50px;
+      background: #fff;
+      border-radius: 37.5px;
+      color: #df1f39;
+      font-size: 19px;
+      text-align: center;
+      line-height: 50px;
+      margin: auto;
+      border: 0;
+      display: block;
+      position: relative;
+      z-index: 0;
+      top: 45px;
+      cursor: pointer;
+  }
+
+  .act-user-modal-bg[data-v-627ce64e] {
+      background: #000;
+      opacity: 0.8;
+      position: fixed;
+      left: 0;
+      z-index: 8999;
+      top: 0;
+      width: 100%;
+      height: 100%;
+  }
+</style>
+<div class="body" data-v-627ce64e="" data-v-a4fec598="">
+  <div data-v-627ce64e="" class="act-user-modal">
+      <span data-v-627ce64e="" class="close"
+          ><i
+              data-v-f0f45c4c=""
+              data-v-627ce64e=""
+              class="iconfont icon-hide"
+              style="font-size: 30px; color: rgb(255, 255, 255)"
+          ></i
+      ></span>
+      <h3 data-v-627ce64e="">
+          
+      </h3>
+      <div data-v-627ce64e="" class="center">
+          <h1 data-v-627ce64e="">字节信奥</h1>
+          <p data-v-627ce64e="" class="desc">免费领取信奥课程</p>
+          <div data-v-627ce64e="" class="nr">
+            <strong>小升初：</strong>进入重点中学信奥社团
+
+            信息学奥赛（信奥）相比少儿编程和创意类编程竞赛，含金量更高。
+            CSP-J优秀成绩在小升初优质初中选拔中展现更强竞争力。
+            <strong>中考：</strong>科技特长生路径
+            
+            初中阶段取得CSP-J/S优秀成绩，有机会以科技特长生身份进入重点高中。
+            为高考强基计划的资格打下基础。
+            <strong>高考：</strong>保送或强基计划
+            
+            NOI金奖：保送清华北大。
+            NOI银奖：一本线破格入围强基计划。
+            NOIP省赛获奖：参加双一流名校强基计划，凭综合评价成绩争取录取。
+          </div>
+      </div>
+      <ul data-v-627ce64e="">
+         
+          <li data-v-627ce64e="">
+              <img
+                  data-v-627ce64e=""
+                  src="./assets/1-d1f0911a.png"
+              />
+              <p data-v-627ce64e="" class="name">扫码加微信</p>
+              <p data-v-627ce64e="" class="test">
+资源宝分享
+              </p>
+          </li>
+      </ul>
+      <button data-v-627ce64e="" class="btn" onclick="handleClick()">
+          我知道了~
+      </button>
+  </div>
+  <div data-v-627ce64e="" class="act-user-modal-bg"></div>
+</div>
+
+<script>
+  function handleClick() {
+      document.querySelector('.body').style.display = 'none';
+  }
+</script>
+
+
+<body>
+<div id="app"></div>
+
+</body>
+</html>
